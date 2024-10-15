@@ -1,6 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';  // Firebase Authentication
 import { getAnalytics } from 'firebase/analytics';
+import * as firebaseui from 'firebaseui';  // Import FirebaseUI
+import firebase from 'firebase/compat/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,8 +17,21 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase Analytics if you want to use it
 const analytics = getAnalytics(app);
+const auth = getAuth(app);  // Initialize Firebase Auth
 
-export { app, analytics };
+// FirebaseUI configuration
+const uiConfig = {
+  signInSuccessUrl: '/',  // URL to redirect to after sign-in
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,  // Correct reference to EmailAuthProvider from firebaseui
+  ],
+  tosUrl: '/terms-of-service',
+  privacyPolicyUrl: '/privacy-policy',
+};
+
+// Initialize FirebaseUI Auth instance
+const ui = new firebaseui.auth.AuthUI(auth);
+
+// Export the initialized FirebaseUI and config
+export { app, analytics, auth, ui, uiConfig };

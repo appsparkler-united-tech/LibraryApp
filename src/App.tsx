@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { app } from './firebaseConfig'; // Import Firebase configuration
+import { ui, uiConfig } from './firebaseConfig';  // Correct import of ui and uiConfig
 
 function App() {
   useEffect(() => {
-    // Example: Use Firebase analytics or Firestore here
-    console.log('Firebase initialized:', app);
+    // Initialize FirebaseUI authentication when the component mounts
+    ui.start('#firebaseui-auth-container', uiConfig);
   }, []);
 
   return (
     <div className="app-container">
-      <input type="text" placeholder="Find Your Next Read" className="search-bar" />
+      <h1>Library App - Sign In</h1>
+      <div id="firebaseui-auth-container"></div> {/* FirebaseUI Auth container */}
     </div>
   );
 }
 
 export default App;
+
