@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import { ui, uiConfig } from './firebaseConfig';  // Correct import of ui and uiConfig
 
