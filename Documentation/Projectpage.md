@@ -23,7 +23,7 @@ When uploading a book, the following fields are mandatory:
 
 This collection stores all the user data.
 
-```json
+```jsonc
 {
 "userId": "abc123",  // unique identifier for each user
 "name": "John Doe",
@@ -43,13 +43,13 @@ This collection stores the library data associated with a user
 ```json
 {
 "lastEdited": ,
-"libraryName”: “Django Library”,
-“libraryRating”: 5,
-“numberOfBooks”: 20,
-“followers”: 5,
-“booksLent”: 10,
-“booksRead”: 4,
-“userId”: , 
+"libraryName": "Django Library",
+"libraryRating": 5,
+"numberOfBooks": 20,
+"followers": 5,
+"booksLent": 10,
+"booksRead": 4,
+"userId": , 
 }
 ```
 
@@ -63,16 +63,16 @@ This collection stores all the books data
 "title": "The Great Gatsby",
 "author": "F. Scott Fitzgerald",
 "genre": "Fiction",
-"language": “English”, 
+"language": "English", 
 "publishedDate": "1925-04-10", 
 "description": "A novel set in the Jazz Age about the enigmatic Jay Gatsby and his love for Daisy Buchanan.", 
 "userId": "abc123",  // this links the book to a specific user
 "createdAt": "2024-10-03T13:45:56Z",  // timestamp when the book was added
 "lastEditedAt":, 
-"coverImageUrl": "https://example.com/gatsby.jpg”,
-"additionalImageUrl": “https://pictures.jpg” -> Array of image urls
-“views”: 5
-“status”: //Draft, InReview, Published
+"coverImageUrl": "https://example.com/gatsby.jpg",
+"additionalImageUrl": "https://pictures.jpg" -> Array of image urls
+"views": 5
+"status": //Draft, InReview, Published
 }
 ```
 
@@ -82,11 +82,11 @@ This collection stores all the book reviews
 
 ```json
 {
-"userId”: “abc143”, //this links the review to a specific user
-“bookId”: 
-“reviewText”: “It was a great read”, 
-“rating”: 4.5
-“createdAt”: "2024-10-03T13:45:56Z",  // timestamp when the book was added
+"userId": "abc143", //this links the review to a specific user
+"bookId": 
+"reviewText": "It was a great read", 
+"rating": 4.5
+"createdAt": "2024-10-03T13:45:56Z",  // timestamp when the book was added
 }
 ```
 
