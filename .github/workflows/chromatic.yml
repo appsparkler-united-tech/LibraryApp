@@ -1,0 +1,33 @@
+name: Chromatic Deployment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check Chromatic Project Token
+        run: echo "CHROMATIC_PROJECT_TOKEN=${{ secrets.CHROMATIC_PROJECT_TOKEN }}"
+
+
+      - name: Remove `node_modules` and `package-lock.json`
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json yarn.lock
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Chromatic
+        run: npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
