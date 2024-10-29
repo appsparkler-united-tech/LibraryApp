@@ -31,7 +31,7 @@ This collection stores all the user data.
 "profilePictureUrl": "https://example.com/profile.jpg",
 "mobileNumber": ,
 "createdAt": "2024-10-03T12:34:56Z", // need to show how long he is been a user
-"lastEdited": , 
+"lastEdited": "2024-10-03T12:34:56Z", 
 "address": "123 Library Lane, Booktown, NY, USA",  // human-readable address
 "geoPoint": { "latitude": 40.7128,"longitude": -74.0060 }
 }
@@ -42,7 +42,7 @@ This collection stores all the user data.
 This collection stores the library data associated with a user
 ```json
 {
-"lastEdited": ,
+"lastEdited": "2024-10-03T12:34:56Z",
 "libraryName": "Django Library",
 "libraryRating": 5,
 "numberOfBooks": 20,
@@ -68,7 +68,7 @@ This collection stores all the books data
 "description": "A novel set in the Jazz Age about the enigmatic Jay Gatsby and his love for Daisy Buchanan.", 
 "userId": "abc123",  // this links the book to a specific user
 "createdAt": "2024-10-03T13:45:56Z",  // timestamp when the book was added
-"lastEditedAt":, 
+"lastEditedAt": "2024-10-03T12:34:56Z", 
 "coverImageUrl": "https://example.com/gatsby.jpg",
 "additionalImageUrl": "https://pictures.jpg" -> Array of image urls
 "views": 5
