@@ -40,7 +40,7 @@ This collection stores all the user data.
 ### **Users Library Collection**
 
 This collection stores the library data associated with a user
-```json
+```jsonc
 {
 "lastEdited": "2024-10-03T12:34:56Z",
 "libraryName": "Django Library",
@@ -57,7 +57,7 @@ This collection stores the library data associated with a user
 
 This collection stores all the books data
 
-```json
+```jsonc
 {
 "bookId": "book123",  // unique identifier for each book
 "title": "The Great Gatsby",
@@ -80,7 +80,7 @@ This collection stores all the books data
 
 This collection stores all the book reviews
 
-```json
+```"jsonc
 {
 "userId": "abc143", //this links the review to a specific user
 "bookId": 
