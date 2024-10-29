@@ -90,6 +90,49 @@ This collection stores all the book reviews
 }
 ```
 
+### Chat Functionality
+
+```jsonc
+{
+  // Users array containing user information
+  "users": [
+    {
+      "userId": "abc123",         // Unique identifier for the user
+      "name": "John Doe",         // Display name of the user
+      "profilePictureUrl": "https://example.com/profile.jpg",  // URL to the user's profile picture
+      "status": "online"           // User's online status (e.g., "online", "offline")
+    }
+  ],
+  
+  // Messages array containing message details
+  "messages": [
+    {
+      "messageId": "msg456",      // Unique identifier for the message
+      "senderId": "abc123",       // ID of the user who sent the message
+      "recipientId": "abc456",    // ID of the user who receives the message (if private)
+      "content": "Hello! Is this book available?", // The text content of the message
+      "timestamp": "2024-10-03T12:34:56Z", // Timestamp of when the message was sent (ISO 8601 format)
+      "messageType": "text",       // Type of message (e.g., "text", "image", "video", "file")
+      "status": "sent"             // Message status (e.g., "sent", "received", "read")
+    }
+  ],
+  
+  // Chat room information
+  "chatRoom": {
+    "roomId": "room789",         // Unique identifier for the chat room
+    "participants": ["abc123", "abc456"], // Array of user IDs of participants in the chat
+    "createdAt": "2024-10-03T12:00:00Z", // Timestamp of when the chat room was created
+    "lastMessage": {              // Last message object
+      "messageId": "msg456",
+      "content": "Hello! Is this book available?",
+      "timestamp": "2024-10-03T12:34:56Z"
+    }
+  }
+}
+
+```
+
+
 ## Technologies Used
 
 Frontend: React with TypeScript and Vite
