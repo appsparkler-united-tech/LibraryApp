@@ -96,6 +96,8 @@ Frontend: React with TypeScript and Vite
 Backend: Firebase Firestore for storing data
 Deployment: Netlify for hosting
 Authentication: Firebase Authentication (Google, Facebook, Phone, and Email/Password)
+Designing: DaisyUI
+Visualization: Storybook, Chromatic
 
 ## How to Run the Project Locally
 
