@@ -29,7 +29,7 @@ This collection stores all the user data.
 "name": "John Doe",
 "email": "john.doe@example.com",
 "profilePictureUrl": "https://example.com/profile.jpg",
-"mobileNumber": ,
+"mobileNumber": "+91 213456789",
 "createdAt": "2024-10-03T12:34:56Z", // need to show how long he is been a user
 "lastEdited": "2024-10-03T12:34:56Z", 
 "address": "123 Library Lane, Booktown, NY, USA",  // human-readable address
@@ -49,7 +49,7 @@ This collection stores the library data associated with a user
 "followers": 5,
 "booksLent": 10,
 "booksRead": 4,
-"userId": , 
+"userId": "abc123"
 }
 ```
 
@@ -70,8 +70,8 @@ This collection stores all the books data
 "createdAt": "2024-10-03T13:45:56Z",  // timestamp when the book was added
 "lastEditedAt": "2024-10-03T12:34:56Z", 
 "coverImageUrl": "https://example.com/gatsby.jpg",
-"additionalImageUrl": "https://pictures.jpg" -> Array of image urls
-"views": 5
+"additionalImageUrl": "https://pictures.jpg", -> Array of image urls
+"views": 5,
 "status": //Draft, InReview, Published
 }
 ```
@@ -80,10 +80,10 @@ This collection stores all the books data
 
 This collection stores all the book reviews
 
-```"jsonc
+```jsonc
 {
 "userId": "abc143", //this links the review to a specific user
-"bookId": 
+"bookId": "book123",
 "reviewText": "It was a great read", 
 "rating": 4.5
 "createdAt": "2024-10-03T13:45:56Z",  // timestamp when the book was added
