@@ -1,16 +1,15 @@
-// BottomNavigation.jsx
 import React from 'react';
 import Button from './Button';
 import { GrFavorite, GrAddCircle, GrChat, GrUser } from 'react-icons/gr';
-import { IoIosSearch } from "react-icons/io";
+import { IoIosSearch } from 'react-icons/io';
 
-const BottomNavigation = () => (
-  <div className="btm-nav bg-primary text-white p-4"> {/* Ensure bg-primary is teal */}
-    <Button icon={<IoIosSearch />} label="Search" isActive={false} />
-    <Button icon={<GrFavorite />} label="Favourite" isActive={false} />
-    <Button icon={<GrAddCircle />} label="Offer" isActive={false} />
-    <Button icon={<GrChat />} label="Message" isActive={false} />
-    <Button icon={<GrUser />} label="Me" isActive={false} />
+const BottomNavigation = ({ handleClick }) => (
+  <div className="btm-nav bg-teal-500">
+    <Button icon={IoIosSearch} label="Search" isActive="true" onClick={handleClick} />
+    <Button icon={GrFavorite} label="Favourite" isActive="true" onClick={handleClick} />
+    <Button icon={GrAddCircle} label="Offer" isActive="true" />
+    <Button icon={GrChat} label="Message" isActive="true" onClick={handleClick} />
+    <Button icon={GrUser} label="Me" isActive="true" onClick={handleClick} />
   </div>
 );
 
