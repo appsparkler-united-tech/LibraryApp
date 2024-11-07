@@ -13,7 +13,7 @@ export const Default = Template.bind({});
 Default.args = {
   icon: GrFormSearch,
   label: 'Search',
-  isActive: false,
+  isActive: true,
 };
 
 export const Active = Template.bind({});
