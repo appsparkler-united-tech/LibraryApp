@@ -8,11 +8,6 @@ const Page = () => {
       {/* Header Component */}
       <Header />
 
-      {/* Page Content */}
-      <main className="flex-grow p-4 overflow-hidden">
-        <p className="text-center">Welcome to your page!</p>
-      </main>
-
       {/* Bottom Navigation Component */}
       <BottomNavigation />
     </div>
