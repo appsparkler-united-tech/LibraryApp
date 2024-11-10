@@ -1427,6 +1427,10 @@ html {
   height: 1.25rem;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -1435,12 +1439,20 @@ html {
   width: 100%;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
 
 .flex-none {
   flex: none;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .-translate-y-1\/2 {
@@ -1462,6 +1474,10 @@ html {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .overflow-hidden {

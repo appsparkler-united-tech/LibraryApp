@@ -1,4 +1,3 @@
-import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import Button from './Button';
 import { GrFormSearch } from 'react-icons/gr';
@@ -9,7 +8,7 @@ export default {
 } as Meta<typeof Button>;
 
 // Define a template for the Button stories
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
+const Template: StoryFn<typeof Button> = (args: any) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
