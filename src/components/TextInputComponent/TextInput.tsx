@@ -1,6 +1,10 @@
 import React from 'react';
 
-const TextInput = ({ placeholder }) => {
+interface TextInputProps {
+  placeholder?: string;
+}
+
+const TextInput: React.FC<TextInputProps> = ({ placeholder }) => {
   return (
     <input
       type="text"

@@ -1,4 +1,3 @@
-// Page.stories.jsx
 import React from 'react';
 import Page from './Page';
 
@@ -7,7 +6,7 @@ export default {
   component: Page,
 };
 
-export const Default = () => (
+export const Default: React.FC = () => (
   <Page>
     <div className="text-center p-8">
       <h1 className="text-2xl font-bold">Welcome to the LibraryApp</h1>

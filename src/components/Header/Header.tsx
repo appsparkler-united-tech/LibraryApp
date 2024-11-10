@@ -2,7 +2,7 @@ import React from 'react';
 import { IoMdPin, IoIosNotifications } from 'react-icons/io';
 import TextInput from '../TextInputComponent/TextInput';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">

@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { IconType } from 'react-icons';
 
-const Button = ({ icon: Icon, label, isActive, onClick }) => {
+interface ButtonProps {
+  icon: IconType;
+  label: string;
+  isActive: boolean;
+  onClick: () => void;
+}
+
+const Button: FC<ButtonProps> = ({ icon: Icon, label, isActive, onClick }) => {
   // Define color classes based on the state
   const textColor = isActive ? 'text-black' : 'text-white';
   const iconColor = isActive ? 'text-black' : 'text-white';
-  
+
   return (
     <button
       className={`flex flex-col items-center p-2 bg-teal-500 ${textColor} ${iconColor} hover:bg-teal-600`}

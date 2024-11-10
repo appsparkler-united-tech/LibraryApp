@@ -1,4 +1,4 @@
-import React from 'react';
+import { StoryFn, Meta } from '@storybook/react';
 import TextInput from './TextInput';
 
 export default {
@@ -7,9 +7,9 @@ export default {
   argTypes: {
     placeholder: { control: 'text' },
   },
-};
+} as Meta<typeof TextInput>;
 
-const Template = (args) => <TextInput {...args} />;
+const Template: StoryFn<typeof TextInput> = (args) => <TextInput {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
