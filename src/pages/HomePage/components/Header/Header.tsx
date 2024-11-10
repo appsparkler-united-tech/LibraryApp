@@ -5,10 +5,15 @@ import TextInput from '../TextInputComponent/TextInput';
 const Header: React.FC = () => {
   return (
     <div className="navbar bg-base-100">
-      <div className="flex-1">
-        <div className="form-control">
+      <div className="flex-1 flex flex-col items-start">
+        <div className="form-control w-full">
           <TextInput placeholder="Search your Read" />
         </div>
+        
+        {/* Link directly below the search bar */}
+        <a href="#" className="link text-teal-600 mt-2 ml-1">
+          Advanced Search
+        </a>
       </div>
       <div className="flex-none gap-4">
         <button className="btn btn-ghost btn-circle text-teal-600">
