@@ -21,6 +21,9 @@ const Page: React.FC<PageProps> = ({ children }) => {
         />
       </div>
 
+        {/* Line under the image */}
+        <hr className="border-t border-black w-full my-4" />
+
       {/* Bottom Navigation Component */}
       <BottomNavigation />
 
