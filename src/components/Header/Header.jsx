@@ -11,10 +11,10 @@ const Header = () => {
         </div>
       </div>
       <div className="flex-none gap-4">
-        <button className="btn btn-ghost btn-circle text-teal-500">
+        <button className="btn btn-ghost btn-circle text-teal-600">
           <IoMdPin size={24} />
         </button>
-        <button className="btn btn-ghost btn-circle text-teal-500">
+        <button className="btn btn-ghost btn-circle text-teal-600">
           <IoIosNotifications size={24} />
         </button>
       </div>
