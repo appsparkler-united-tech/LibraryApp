@@ -17,7 +17,7 @@ const Page: React.FC<PageProps> = ({ children }) => {
         <img
           src="/homePageLibrary.png"  // Path to the image in the public folder
           alt="Homepage Banner"
-          className="w-3/4 mx-auto h-auto"  // Adjust width to 75% of the container, centered
+          className="w-3/5 mx-auto h-auto"  // Adjust width to 75% of the container, centered
         />
       </div>
 
