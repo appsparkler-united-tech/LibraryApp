@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../Header/Header';
-import BottomNavigation from '../BottomNavigationComponent/BottomNavigation';
+import Header from './components/Header/Header';
+import BottomNavigation from './components/BottomNavigationComponent/BottomNavigation';
 
 interface PageProps {
   children: React.ReactNode;
