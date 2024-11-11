@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './components/Header/Header';
+import CategoryBar from './components/CategoryBar/CategoryBar';
 import BottomNavigation from './components/BottomNavigationComponent/BottomNavigation';
+
 
 interface PageProps {
   children: React.ReactNode;
@@ -28,6 +30,8 @@ const Page: React.FC<PageProps> = ({ children }) => {
 
         {/* Line under the image */}
         <hr className="border-t border-black max-w-full my-2" />
+
+        <CategoryBar />
 
       {/* Bottom Navigation Component */}
       <BottomNavigation />
