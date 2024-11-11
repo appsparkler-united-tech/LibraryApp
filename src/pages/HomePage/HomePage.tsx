@@ -13,16 +13,21 @@ const Page: React.FC<PageProps> = ({ children }) => {
       <Header />
 
       {/* Image Below Header */}
-      <div className="mt-4">
-        <img
-          src="/homePageLibrary.png"  // Path to the image in the public folder
-          alt="Homepage Banner"
-          className="w-full mx-auto"  // Adjust width to 75% of the container, centered
-        />
-      </div>
+      <div className="flex flex-col items-center mt-4">
+  <img
+    src="homePageLibrary.png"
+    alt="Descriptive alt text"
+    className="w-3/5 h-auto"
+  />
+  
+  {/* Centered Header below the image */}
+  <h1 className="text-teal-600 text-pretty font-normal mt-2">
+    The Library App
+  </h1>
+</div>
 
         {/* Line under the image */}
-        <hr className="border-t border-black w-full my-4" />
+        <hr className="border-t border-black max-w-full my-2" />
 
       {/* Bottom Navigation Component */}
       <BottomNavigation />
