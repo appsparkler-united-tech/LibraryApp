@@ -24,7 +24,7 @@ const Header: React.FC = () => {
 
       {/* Second row: Link under the search bar */}
       <div className="mt-2">
-        <a href="#" className="link text-teal-600 ml-1">
+      <a href="#" className="link text-black text-xs font-thin ml-1">
           Advanced Search
         </a>
       </div>
