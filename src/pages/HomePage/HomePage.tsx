@@ -6,7 +6,7 @@ interface PageProps {
   children: React.ReactNode;
 }
 
-const Page: React.FC<PageProps> = ({ children }) => {
+const HomePage: React.FC<PageProps> = ({ children }) => {
   return (
     <div className="container mx-auto overflow-hidden">
       {/* Header Component */}
@@ -21,4 +21,4 @@ const Page: React.FC<PageProps> = ({ children }) => {
   );
 };
 
-export default Page;
+export default HomePage;
