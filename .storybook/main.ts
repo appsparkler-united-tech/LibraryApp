@@ -14,4 +14,12 @@ const config: StorybookConfig = {
     options: {},
   },
 };
+
+// .storybook/main.js
+module.exports = {
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  framework: '@storybook/react-vite', // Ensure you're using the Vite version of Storybook.
+};
+
 export default config;
