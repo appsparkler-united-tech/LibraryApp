@@ -1,6 +1,3 @@
-// src/stories/ScrollAreas.stories.tsx
-
-import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import Card from '../CardComponent/Card'; // Ensure this path points to your Card component
 import { ScrollArea } from '@storybook/components';
