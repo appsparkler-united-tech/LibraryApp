@@ -3,7 +3,7 @@ import Homepage from './pages/HomePage/HomePage'; // Update the path to your Hom
 function App() {
   return (
     <>
-      <Homepage />
+      <Homepage children={undefined} />
     </>
   );
 }
