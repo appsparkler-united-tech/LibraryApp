@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { IconType } from 'react-icons';
 
 interface ButtonProps {
-  icon: IconType;
+  icon?: IconType;
   label: string;
   isActive: boolean;
   onClick: () => void;
