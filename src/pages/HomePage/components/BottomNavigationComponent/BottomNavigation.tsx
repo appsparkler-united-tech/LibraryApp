@@ -14,31 +14,26 @@ const BottomNavigation: React.FC = () => {
       <Button
         icon={IoIosSearch}
         label="Search"
-        isActive={true}
         onClick={() => handleClick("search your next read")}
       />
       <Button
         icon={GrFavorite}
         label="Favourite"
-        isActive={true}
         onClick={() => handleClick("mark your favourite")}
       />
       <Button
         icon={GrAddCircle}
         label="Offer"
-        isActive={true}
         onClick={() => handleClick("offer books")}
       />
       <Button
         icon={GrChat}
         label="Message"
-        isActive={true}
         onClick={() => handleClick("lets chat")}
       />
       <Button
         icon={GrUser}
         label="Me"
-        isActive={true}
         onClick={() => handleClick("my profile")}
       />
     </div>

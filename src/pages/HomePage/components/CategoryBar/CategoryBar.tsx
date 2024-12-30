@@ -10,7 +10,6 @@ const CategoryBar: React.FC = () => {
         <Button
           key={category}
           label={category} // or an appropriate default icon if needed
-          isActive={true}
           onClick={() => {}} // Empty function as a default
         />
       ))}
