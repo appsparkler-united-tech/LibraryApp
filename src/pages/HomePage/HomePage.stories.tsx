@@ -1,14 +1,14 @@
 import React from 'react';
-import Page from './HomePage';
+import HomePage from './HomePage';
 
 export default {
-  title: 'Components/Page',
-  component: Page,
+  title: 'Components/HomePage',
+  component: HomePage,
 };
 
 export const Default: React.FC = () => (
-  <Page>
+  <HomePage>
     <div className="text-center p-8">
     </div>
-  </Page>
+  </HomePage>
 );

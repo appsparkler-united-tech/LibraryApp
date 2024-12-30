@@ -1,25 +1,26 @@
-import { FC } from 'react'
+import { FC } from 'react';
 import { IconType } from 'react-icons';
 
 interface ButtonProps {
   icon?: IconType;
   label: string;
-  isActive: boolean;
   onClick: () => void;
+  variant?: 'primary' | 'secondary';
+  className?: string; // Allow custom class names
 }
 
-const Button: FC<ButtonProps> = ({ icon: Icon, label, isActive, onClick }) => {
-  // Define color classes based on the state
-  const textColor = isActive ? 'text-black' : 'text-white';
-  const iconColor = isActive ? 'text-black' : 'text-white';
+const Button: FC<ButtonProps> = ({ icon: Icon, label, onClick, variant = 'primary', className = '' }) => {
+  const textColor = variant === 'secondary' ? 'text-white' : 'text-black';
+  const buttonColor = variant === 'secondary' ? 'bg-teal-700' : 'bg-teal-500';
+  const roundedStyle = variant === 'secondary' ? 'rounded-full' : '';
 
   return (
     <button
-      className={`flex flex-col items-center p-2 bg-teal-500 ${textColor} ${iconColor} hover:bg-teal-600`}
+      className={`flex items-center justify-center p-3 ${buttonColor} ${textColor} ${roundedStyle} hover:bg-teal-600 ${className}`}
       onClick={onClick}
     >
-      {Icon && <Icon className={`h-5 w-5 ${iconColor}`} />}
-      <span className={`btm-nav-label ${textColor}`}>{label}</span>
+      {Icon && <Icon className={`mr-2`} />}
+      {label}
     </button>
   );
 };

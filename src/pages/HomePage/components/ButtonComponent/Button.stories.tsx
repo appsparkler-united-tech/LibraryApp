@@ -10,16 +10,16 @@ export default {
 // Define a template for the Button stories
 const Template: StoryFn<typeof Button> = (args: any) => <Button {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   icon: GrFormSearch,
-  label: 'Search',
-  isActive: true,
+  label: 'Primary Button',
+  variant: 'primary',  // Set primary variant
 };
 
-export const Active = Template.bind({});
-Active.args = {
+export const Secondary = Template.bind({});
+Secondary.args = {
   icon: GrFormSearch,
-  label: 'Search',
-  isActive: true,
+  label: 'Secondary Button',
+  variant: 'secondary',  // Set secondary variant
 };
