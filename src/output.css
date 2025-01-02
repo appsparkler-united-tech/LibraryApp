@@ -1635,6 +1635,10 @@ html {
   }
 }
 
+.artboard.phone {
+  width: 320px;
+}
+
 .btm-nav-xs .btm-nav-label {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -1710,6 +1714,10 @@ html {
 .join.join-horizontal > :where(*:not(:first-child)):is(.btn) {
   margin-inline-start: calc(var(--border-btn) * -1);
   margin-top: 0px;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 .absolute {
