@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import Header from './Header';
 
 export default {
-  title: 'Components/Header',
+  title: 'Pages/HomePage/Header',
   component: Header,
 } as Meta;
 

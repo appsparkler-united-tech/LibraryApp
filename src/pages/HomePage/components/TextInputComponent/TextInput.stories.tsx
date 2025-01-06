@@ -2,7 +2,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import TextInput from './TextInput';
 
 export default {
-  title: 'Components/TextInput',
+  title: 'Pages/HomePage/TextInput',
   component: TextInput,
   argTypes: {
     placeholder: { control: 'text' },

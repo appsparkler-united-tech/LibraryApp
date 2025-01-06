@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import AccessPage from './AccessPage';
+import AccessPage from '../AccessPage/AccessPage';
 
 export default {
   title: 'Pages/AccessPage',

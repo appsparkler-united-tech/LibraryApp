@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import BottomNavigation from './BottomNavigation';
 
 export default {
-  title: 'Components/BottomNavigation',
+  title: 'Pages/HomePage/BottomNavigation',
   component: BottomNavigation,
 } as Meta<typeof BottomNavigation>;
 
