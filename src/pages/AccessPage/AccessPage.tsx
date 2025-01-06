@@ -34,7 +34,7 @@ const AccessPage: React.FC = () => {
      
                         {/* Reused TitleLogoComponent */}
                         <TitleLogoComponent
-        logoSrc="/public/homePageLibrary.png"
+        logoSrc="/homePageLibrary.png"
         title="The Library App"
       />
       <h1 className="text-teal-700 text-pretty font-serif mb-6">Chat! Read! Repeat!</h1> {/* Teal-colored text */}

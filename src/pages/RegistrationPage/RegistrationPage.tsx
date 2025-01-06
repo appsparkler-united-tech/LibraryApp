@@ -69,7 +69,7 @@ const RegistrationPage: React.FC = () => {
 
             {/* Reused TitleLogoComponent */}
             <TitleLogoComponent
-        logoSrc="/public/homePageLibrary.png"
+        logoSrc="/homePageLibrary.png"
         title="The Library App"
       />
 
