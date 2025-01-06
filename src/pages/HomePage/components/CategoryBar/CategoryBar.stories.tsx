@@ -4,7 +4,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import CategoryBar from './CategoryBar';
 
 export default {
-  title: 'Components/CategoryBar',
+  title: 'Pages/HomePage/CategoryBar',
   component: CategoryBar,
 } as Meta;
 

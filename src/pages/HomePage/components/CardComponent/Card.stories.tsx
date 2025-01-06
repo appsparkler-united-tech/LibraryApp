@@ -4,7 +4,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import Card, { CardProps } from './Card';
 
 export default {
-  title: 'Components/Card',
+  title: 'Pages/HomePage/Card',
   component: Card,
 } as Meta;
 

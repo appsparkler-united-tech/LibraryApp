@@ -3,7 +3,7 @@ import Card from '../CardComponent/Card'; // Ensure this path points to your Car
 import { ScrollArea } from '@storybook/components';
 
 export default {
-  title: 'Components/ScrollArea',
+  title: 'Pages/HomePage/ScrollArea',
   component: ScrollArea,
 } as Meta;
 

@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   FacebookAuthProvider
 } from "firebase/auth";
+import TitleLogoComponent from "../../components/TitleLogoComponent";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -66,15 +67,11 @@ const LoginPage: React.FC = () => {
         <button className="btn btn-link text-teal-700">Help</button>
       </div>
 
-      {/* Header */}
-      <div className="flex items-center space-x-4 mb-6">
-        <img
-          src="/public/homePageLibrary.png"
-          alt="Library App Logo"
-          className="h-16"
-        />
-        <h1 className="text-lg font-normal text-teal-700">The Library App</h1>
-      </div>
+            {/* Reused TitleLogoComponent */}
+            <TitleLogoComponent
+        logoSrc="/public/homePageLibrary.png"
+        title="The Library App"
+      />
 
       {/* Form Section */}
       <div className="w-3/4 max-w-md space-y-4">

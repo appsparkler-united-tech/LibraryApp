@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from './components/ButtonComponent/Button'; // Adjust the import path if needed
+import Button from '../HomePage/components/ButtonComponent/Button'; // Adjust the import path if needed
+import TitleLogoComponent from "../../components/TitleLogoComponent";
 
 const AccessPage: React.FC = () => {
   const handleLogin = () => {
@@ -30,12 +31,11 @@ const AccessPage: React.FC = () => {
 </button>
        <button className="btn btn-link text-teal-700">Help</button>
       </div>
-
-      <h1 className="text-teal-700 text-pretty font-serif mb-6"> The Library App </h1> {/* Teal-colored text */}
-      <img
-        src="bookPile.png" // Ensure this path is correct relative to the public or assets folder
-        alt="Pile of books"
-        className="w-0.2 h-auto mb-10" // Adjust size as needed
+     
+                        {/* Reused TitleLogoComponent */}
+                        <TitleLogoComponent
+        logoSrc="/public/homePageLibrary.png"
+        title="The Library App"
       />
       <h1 className="text-teal-700 text-pretty font-serif mb-6">Chat! Read! Repeat!</h1> {/* Teal-colored text */}
       <div className="space-y-4 w-1/2"> {/* Ensures both buttons share the same width */}
