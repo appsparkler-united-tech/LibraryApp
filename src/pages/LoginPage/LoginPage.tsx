@@ -1,47 +1,64 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc"; // Google logo
 import { FaFacebook } from "react-icons/fa"; // Facebook logo
 
 import { auth } from "../../firebase";
 import {
-  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  FacebookAuthProvider
+  FacebookAuthProvider,
 } from "firebase/auth";
 import TitleLogoComponent from "../../components/TitleLogoComponent";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
-  const [password] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
 
-  // Handlers for Login
+  // Handle Email Login
   const handleEmailLogin = async () => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log("User registered with email:", userCredential.user);
-    } catch (error) {
-      console.error("Error registering with email:", error);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log("User logged in with email:", userCredential.user);
+
+      // Redirect to Me Page
+      navigate("/me");
+    } catch (error: any) {
+      setError("Invalid email or password. Please try again.");
+      console.error("Error logging in with email:", error);
     }
   };
 
+  // Handle Google Login
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
-      console.log("User registered with Google:", result.user);
+      console.log("User logged in with Google:", result.user);
+
+      // Redirect to Me Page
+      navigate("/me");
     } catch (error) {
-      console.error("Error registering with Google:", error);
+      setError("Error logging in with Google. Please try again.");
+      console.error("Error logging in with Google:", error);
     }
   };
 
+  // Handle Facebook Login
   const handleFacebookLogin = async () => {
     const provider = new FacebookAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
-      console.log("User registered with Facebook:", result.user);
+      console.log("User logged in with Facebook:", result.user);
+
+      // Redirect to Me Page
+      navigate("/me");
     } catch (error) {
-      console.error("Error registering with Facebook:", error);
+      setError("Error logging in with Facebook. Please try again.");
+      console.error("Error logging in with Facebook:", error);
     }
   };
 
@@ -56,22 +73,14 @@ const LoginPage: React.FC = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
         <button className="btn btn-link text-teal-700">Help</button>
       </div>
 
-            {/* Reused TitleLogoComponent */}
-            <TitleLogoComponent
-        logoSrc="/homePageLibrary.png"
-        title="The Library App"
-      />
+      {/* Reused TitleLogoComponent */}
+      <TitleLogoComponent logoSrc="/homePageLibrary.png" title="The Library App" />
 
       {/* Form Section */}
       <div className="w-3/4 max-w-md space-y-4">
@@ -83,10 +92,19 @@ const LoginPage: React.FC = () => {
             onChange={(e) => setEmail(e.target.value)}
             className="input input-bordered w-full"
           />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input input-bordered w-full"
+          />
           <button onClick={handleEmailLogin} className="btn btn-primary bg-teal-600 w-full">
-            Continue
+            Login
           </button>
         </div>
+
+        {error && <p className="text-red-500 text-center">{error}</p>}
 
         <p className="text-sm text-center mt-4">
           Don't have an account yet?{" "}
@@ -96,15 +114,15 @@ const LoginPage: React.FC = () => {
         </p>
 
         <div className="space-y-2 mt-6">
-<button onClick={handleGoogleLogin} className="btn btn-outline w-full flex items-center space-x-2">
-  <FcGoogle size={20} /> {/* Google logo */}
-  <span>Register with Google</span>
-</button>
+          <button onClick={handleGoogleLogin} className="btn btn-outline w-full flex items-center space-x-2">
+            <FcGoogle size={20} /> {/* Google logo */}
+            <span>Register with Google</span>
+          </button>
 
-<button onClick={handleFacebookLogin} className="btn btn-outline w-full flex items-center space-x-2">
-  <FaFacebook size={20} color="#1877F2" /> {/* Facebook logo */}
-  <span>Register with Facebook</span>
-</button>
+          <button onClick={handleFacebookLogin} className="btn btn-outline w-full flex items-center space-x-2">
+            <FaFacebook size={20} color="#1877F2" /> {/* Facebook logo */}
+            <span>Register with Facebook</span>
+          </button>
         </div>
       </div>
 

@@ -1,25 +1,39 @@
 import React, { useState } from "react";
-import { FcGoogle } from "react-icons/fc"; // Google logo
-import { FaFacebook } from "react-icons/fa"; // Facebook logo
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
 
 import { auth } from "../../firebase";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  FacebookAuthProvider
+  FacebookAuthProvider,
 } from "firebase/auth";
 import TitleLogoComponent from "../../components/TitleLogoComponent";
 
 const RegistrationPage: React.FC = () => {
   const [email, setEmail] = useState("");
-  const [password] = useState("");
+  const [password, setPassword] = useState("");
+  const [step, setStep] = useState<"email" | "password">("email"); // Track the current step
 
   // Handlers for registration
-  const handleEmailRegistration = async () => {
+  const handleEmailRegistration = () => {
+    if (!email) {
+      alert("Please enter a valid email");
+      return;
+    }
+    setStep("password"); // Move to the password setup step
+  };
+
+  const handlePasswordRegistration = async () => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       console.log("User registered with email:", userCredential.user);
+      // Redirect to the homepage or a welcome page
     } catch (error) {
       console.error("Error registering with email:", error);
     }
@@ -67,26 +81,44 @@ const RegistrationPage: React.FC = () => {
         <button className="btn btn-link text-teal-700">Help</button>
       </div>
 
-            {/* Reused TitleLogoComponent */}
-            <TitleLogoComponent
-        logoSrc="/homePageLibrary.png"
-        title="The Library App"
-      />
+      {/* Reused TitleLogoComponent */}
+      <TitleLogoComponent logoSrc="/homePageLibrary.png" title="The Library App" />
 
       {/* Form Section */}
       <div className="w-3/4 max-w-md space-y-4">
-        <div className="space-y-2">
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="input input-bordered w-full"
-          />
-          <button onClick={handleEmailRegistration} className="btn btn-primary bg-teal-600 w-full">
-            Continue
-          </button>
-        </div>
+        {step === "email" ? (
+          <div className="space-y-2">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="input input-bordered w-full"
+            />
+            <button
+              onClick={handleEmailRegistration}
+              className="btn btn-primary bg-teal-600 w-full"
+            >
+              Continue
+            </button>
+          </div>
+        ) : (
+          <div className="space-y-2">
+            <input
+              type="password"
+              placeholder="Create Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="input input-bordered w-full"
+            />
+            <button
+              onClick={handlePasswordRegistration}
+              className="btn btn-primary bg-teal-600 w-full"
+            >
+              Register
+            </button>
+          </div>
+        )}
 
         <p className="text-sm text-center mt-4">
           Already have an account?{" "}
@@ -96,15 +128,21 @@ const RegistrationPage: React.FC = () => {
         </p>
 
         <div className="space-y-2 mt-6">
-<button onClick={handleGoogleRegistration} className="btn btn-outline w-full flex items-center space-x-2">
-  <FcGoogle size={20} /> {/* Google logo */}
-  <span>Register with Google</span>
-</button>
+          <button
+            onClick={handleGoogleRegistration}
+            className="btn btn-outline w-full flex items-center space-x-2"
+          >
+            <FcGoogle size={20} />
+            <span>Register with Google</span>
+          </button>
 
-<button onClick={handleFacebookRegistration} className="btn btn-outline w-full flex items-center space-x-2">
-  <FaFacebook size={20} color="#1877F2" /> {/* Facebook logo */}
-  <span>Register with Facebook</span>
-</button>
+          <button
+            onClick={handleFacebookRegistration}
+            className="btn btn-outline w-full flex items-center space-x-2"
+          >
+            <FaFacebook size={20} color="#1877F2" />
+            <span>Register with Facebook</span>
+          </button>
         </div>
       </div>
 
