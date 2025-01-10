@@ -1260,6 +1260,10 @@ html {
   .btn-primary {
     --btn-color: var(--fallback-p);
   }
+
+  .btn-success {
+    --btn-color: var(--fallback-su);
+  }
 }
 
 @supports (color: color-mix(in oklab, black, black)) {
@@ -1315,6 +1319,16 @@ html {
   .btn-primary {
     --btn-color: var(--p);
   }
+
+  .btn-success {
+    --btn-color: var(--su);
+  }
+}
+
+.btn-success {
+  --tw-text-opacity: 1;
+  color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
+  outline-color: var(--fallback-su,oklch(var(--su)/1));
 }
 
 .btn.glass {
@@ -2050,6 +2064,10 @@ html {
   margin-bottom: 1rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -2144,6 +2162,10 @@ html {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .flex-grow {
@@ -2285,6 +2307,11 @@ html {
   border-color: rgb(20 184 166 / var(--tw-border-opacity, 1));
 }
 
+.border-accent {
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-a,oklch(var(--a)/var(--tw-border-opacity, 1)));
+}
+
 .bg-base-100 {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity, 1)));
@@ -2365,6 +2392,11 @@ html {
   padding-bottom: 1rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .pr-12 {
   padding-right: 3rem;
 }
@@ -2420,6 +2452,10 @@ html {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .text-black {
