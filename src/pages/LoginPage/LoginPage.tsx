@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc"; // Google logo
 import { FaFacebook } from "react-icons/fa"; // Facebook logo
 
@@ -16,21 +15,21 @@ const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   // Handle Email Login
   const handleEmailLogin = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in with email:", userCredential.user);
-
-      // Redirect to Me Page
-      navigate("/me");
+  
+      // Remove navigation
+      console.log("User logged in successfully!");
     } catch (error: any) {
       setError("Invalid email or password. Please try again.");
       console.error("Error logging in with email:", error);
     }
   };
+  
 
   // Handle Google Login
   const handleGoogleLogin = async () => {
@@ -40,7 +39,6 @@ const LoginPage: React.FC = () => {
       console.log("User logged in with Google:", result.user);
 
       // Redirect to Me Page
-      navigate("/me");
     } catch (error) {
       setError("Error logging in with Google. Please try again.");
       console.error("Error logging in with Google:", error);
@@ -108,9 +106,9 @@ const LoginPage: React.FC = () => {
 
         <p className="text-sm text-center mt-4">
           Don't have an account yet?{" "}
-          <a href="/login" className="text-primary hover:underline">
+          <button className="text-primary hover:underline">
             Sign Up
-          </a>
+          </button>
         </p>
 
         <div className="space-y-2 mt-6">
