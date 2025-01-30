@@ -1,42 +1,45 @@
-import React from 'react';
-import Button from '../ButtonComponent/Button';
-import { GrFavorite, GrAddCircle, GrChat, GrUser } from 'react-icons/gr';
-import { IoIosSearch } from 'react-icons/io';
+import React from "react";
+import { CiSearch, CiHeart, CiCirclePlus, CiChat1, CiUser} from "react-icons/ci";
 
-const BottomNavigation: React.FC = () => {
-  // Define the type of action as a string for the handleClick function
-  const handleClick = (action: string): void => {
-    console.log(action);
-  };
 
+type BottomNavigationProps = {
+  onClick: (action: string) => void;
+};
+
+const BottomNavigation: React.FC<BottomNavigationProps> = ({ onClick }) => {
   return (
-    <div className="btm-nav">
-      <Button
-        icon={IoIosSearch}
-        label="Search"
-        onClick={() => handleClick("search your next read")}
-      />
-      <Button
-        icon={GrFavorite}
-        label="Favourite"
-        onClick={() => handleClick("mark your favourite")}
-      />
-      <Button
-        icon={GrAddCircle}
-        label="Offer"
-        onClick={() => handleClick("offer books")}
-      />
-      <Button
-        icon={GrChat}
-        label="Message"
-        onClick={() => handleClick("lets chat")}
-      />
-      <Button
-        icon={GrUser}
-        label="Me"
-        onClick={() => handleClick("my profile")}
-      />
-    </div>
+    <footer className="footer footer-horizontal bg-base-300 p-4">
+      <nav className="w-full flex justify-around">
+        <a className="flex flex-col items-center cursor-pointer" onClick={() => onClick("search")}>
+          <CiSearch className="text-2xl text-secondary-content" />
+          <span className="text-xs text-secondary-content">Search</span>
+        </a>
+        </nav>
+        <nav className="w-full flex justify-around">
+        <a className="flex flex-col items-center cursor-pointer" onClick={() => onClick("favourite")}>
+          <CiHeart className="text-2xl text-black" />
+          <span className="text-xs text-secondary-content">Favourite</span>
+        </a>
+        </nav>
+        <nav className="w-full flex justify-around">
+        <a className="flex flex-col items-center cursor-pointer" onClick={() => onClick("offer")}>
+          <CiCirclePlus className="text-2xl text-black" />
+          <span className="text-xs text-black">Offer</span>
+        </a>
+        </nav>
+        <nav className="w-full flex justify-around">
+        <a className="flex flex-col items-center cursor-pointer" onClick={() => onClick("message")}>
+          <CiChat1 className="text-2xl text-black" />
+          <span className="text-xs text-black">Message</span>
+        </a>
+        </nav>
+        <nav className="w-full flex justify-around">
+        <a className="flex flex-col items-center cursor-pointer" onClick={() => onClick("me")}>
+          <CiUser className="text-2xl text-black" />
+          <span className="text-xs text-black">Me</span>
+        </a>
+      </nav>
+    </footer>
   );
 };
 

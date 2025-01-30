@@ -1,12 +1,20 @@
-import { Meta, StoryFn } from '@storybook/react';
-import BottomNavigation from './BottomNavigation';
+import type { Meta, StoryObj } from "@storybook/react";
+import BottomNavigation from "./BottomNavigation";
+import { action } from "@storybook/addon-actions";
 
-export default {
-  title: 'Pages/HomePage/BottomNavigation',
+const meta: Meta<typeof BottomNavigation> = {
+  title: "Components/BottomNavigation",
   component: BottomNavigation,
-} as Meta<typeof BottomNavigation>;
+  parameters: {
+    layout: "fullscreen",
+  },
+};
 
-const Template: StoryFn<typeof BottomNavigation> = (args) => <BottomNavigation {...args} />;
+export default meta;
+type Story = StoryObj<typeof BottomNavigation>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {
+  args: {
+    onClick: action("button-click"),
+  },
+};
