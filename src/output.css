@@ -2708,6 +2708,9 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .rounded {
+    border-radius: 0.25rem;
+  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -3025,6 +3028,14 @@
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .lg\:footer-horizontal {
+    @media (width >= 64rem) {
+      grid-auto-flow: column;
+      &.footer-center {
+        grid-auto-flow: row dense;
+      }
     }
   }
   .lg\:grid-cols-4 {
