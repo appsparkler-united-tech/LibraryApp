@@ -53,7 +53,6 @@ const LoginPage: React.FC = () => {
       console.log("User logged in with Facebook:", result.user);
 
       // Redirect to Me Page
-      navigate("/me");
     } catch (error) {
       setError("Error logging in with Facebook. Please try again.");
       console.error("Error logging in with Facebook:", error);

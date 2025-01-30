@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../HomePage/components/ButtonComponent/Button'; // Adjust the import path if needed
 import TitleLogoComponent from "../../components/TitleLogoComponent";
 
 const AccessPage: React.FC = () => {
