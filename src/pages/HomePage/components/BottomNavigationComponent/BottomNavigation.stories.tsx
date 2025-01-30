@@ -3,7 +3,7 @@ import BottomNavigation from "./BottomNavigation";
 import { action } from "@storybook/addon-actions";
 
 const meta: Meta<typeof BottomNavigation> = {
-  title: "Components/BottomNavigation",
+  title: "Pages/HomePage/BottomNavigation",
   component: BottomNavigation,
   parameters: {
     layout: "fullscreen",
