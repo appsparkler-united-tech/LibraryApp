@@ -5,12 +5,14 @@ type BottomNavigationProps = {
   onClick: (action: string) => void;
 };
 
+
+
+
 const BottomNavigation: React.FC<BottomNavigationProps> = ({ onClick }) => {
   const handleButtonClick = (action: string) => {
     console.log(`Button clicked: ${action}`);
     onClick(action);
   };
-
   return (
     <footer className="footer bg-primary p-4">
       <nav className="w-full flex justify-between">
