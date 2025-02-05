@@ -13,10 +13,10 @@ const Header: React.FC = () => {
         
         {/* Buttons */}
         <div className="flex gap-4">
-          <button className="btn btn-ghost btn-circle text-teal-600">
+          <button className="btn btn-ghost btn-circle text-secondary-content">
             <IoMdPin size={24} />
           </button>
-          <button className="btn btn-ghost btn-circle text-teal-600">
+          <button className="btn btn-ghost btn-circle text-secondary-content">
             <IoIosNotifications size={24} />
           </button>
         </div>
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
 
       {/* Second row: Link under the search bar */}
       <div className="mt-2">
-      <a href="#" className="link text-black text-xs font-thin ml-1">
+      <a href="#" className="link text-secondary-content text-xs font-thin ml-1">
           Advanced Search
         </a>
       </div>
