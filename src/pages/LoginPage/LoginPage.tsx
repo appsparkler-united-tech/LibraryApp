@@ -63,17 +63,22 @@ const LoginPage: React.FC = () => {
     <div className="flex flex-col items-center justify-center h-screen">
       {/* Top Navigation */}
       <div className="absolute top-10 w-full flex justify-between px-5">
-        <button className="btn btn-circle btn-outline text-teal-700 hover:bg-teal-700 p-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <button className="btn btn-link text-teal-700">Help</button>
+      <button className="btn btn-primary btn-circle">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"  // Icon size
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M6 18L18 6M6 6l12 12"
+    />
+  </svg>
+</button>
+       <button className="btn btn-primary">Help</button>
       </div>
 
       {/* Reused TitleLogoComponent */}
@@ -96,7 +101,7 @@ const LoginPage: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="input input-bordered w-full"
           />
-          <button onClick={handleEmailLogin} className="btn btn-primary bg-teal-600 w-full">
+          <button onClick={handleEmailLogin} className="btn btn-primary w-full">
             Login
           </button>
         </div>

@@ -1,4 +1,4 @@
-/*! tailwindcss v4.0.1 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.0.3 | MIT License | https://tailwindcss.com */
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -1197,7 +1197,8 @@
       appearance: none;
       padding-inline-start: calc(0.25rem * 4);
       padding-inline-end: calc(0.25rem * 7);
-      background-color: inherit;
+      background: inherit;
+      border-radius: inherit;
       border-style: none;
       &:focus, &:focus-within {
         outline-style: none;
@@ -1908,6 +1909,9 @@
   .sticky {
     position: sticky;
   }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
   .top-1 {
     top: calc(var(--spacing) * 1);
   }
@@ -1922,6 +1926,12 @@
   }
   .right-4 {
     right: calc(var(--spacing) * 4);
+  }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
   }
   .input {
     cursor: text;
@@ -1991,10 +2001,6 @@
       &::-webkit-inner-spin-button {
         margin-block: calc(0.25rem * -3);
         margin-inline-end: calc(0.25rem * -3);
-      }
-    }
-    &[list] {
-      &::-webkit-calendar-picker-indicator {
       }
     }
   }
@@ -2127,6 +2133,12 @@
       }
     }
   }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-50 {
+    z-index: 50;
+  }
   .list-col-wrap {
     grid-row-start: 2;
   }
@@ -2136,22 +2148,26 @@
   .float-right {
     float: right;
   }
-  .container {
-    width: 100%;
-    @media (width >= 40rem) {
-      max-width: 40rem;
+  .divider {
+    display: flex;
+    height: calc(0.25rem * 4);
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+    white-space: nowrap;
+    margin: var(--divider-m, 1rem 0);
+    &:before, &:after {
+      content: "";
+      height: calc(0.25rem * 0.5);
+      width: 100%;
+      flex-grow: 1;
+      background-color: color-mix(in oklab, var(--color-base-content) 10%, transparent);
+      @media print {
+        border: 0.5px solid;
+      }
     }
-    @media (width >= 48rem) {
-      max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-      max-width: 64rem;
-    }
-    @media (width >= 80rem) {
-      max-width: 80rem;
-    }
-    @media (width >= 96rem) {
-      max-width: 96rem;
+    &:not(:empty) {
+      gap: calc(0.25rem * 4);
     }
   }
   .filter {
@@ -2195,12 +2211,6 @@
         opacity: 0%;
       }
     }
-  }
-  .mx-auto {
-    margin-inline: auto;
-  }
-  .my-2 {
-    margin-block: calc(var(--spacing) * 2);
   }
   .input {
     .label {
@@ -2264,8 +2274,8 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
-  .mr-2 {
-    margin-right: calc(var(--spacing) * 2);
+  .mt-\[60px\] {
+    margin-top: 60px;
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
@@ -2521,9 +2531,6 @@
   .h-\[500px\] {
     height: 500px;
   }
-  .h-\[600px\] {
-    height: 600px;
-  }
   .h-auto {
     height: auto;
   }
@@ -2551,20 +2558,23 @@
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
+  .w-8 {
+    width: calc(var(--spacing) * 8);
+  }
   .w-10 {
     width: calc(var(--spacing) * 10);
   }
   .w-full {
     width: 100%;
   }
-  .max-w-full {
-    max-width: 100%;
-  }
   .max-w-md {
     max-width: var(--container-md);
   }
   .max-w-sm {
     max-width: var(--container-sm);
+  }
+  .flex-1 {
+    flex: 1;
   }
   .flex-shrink {
     flex-shrink: 1;
@@ -2626,17 +2636,11 @@
       grid-auto-flow: row dense;
     }
   }
-  .grid-flow-col {
-    grid-auto-flow: column;
-  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .grid-cols-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -2661,12 +2665,6 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
-  }
-  .gap-8 {
-    gap: calc(var(--spacing) * 8);
-  }
-  .gap-10 {
-    gap: calc(var(--spacing) * 10);
   }
   .gap-x-4 {
     column-gap: calc(var(--spacing) * 4);
@@ -2702,11 +2700,11 @@
       margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
-  .overflow-auto {
-    overflow: auto;
-  }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-y-auto {
+    overflow-y: auto;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -2722,22 +2720,12 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
   .border-accent {
     border-color: var(--color-accent);
-  }
-  .border-black {
-    border-color: var(--color-black);
-  }
-  .border-blue-600 {
-    border-color: var(--color-blue-600);
   }
   .border-gray-300 {
     border-color: var(--color-gray-300);
@@ -2748,44 +2736,20 @@
   .bg-base-300 {
     background-color: var(--color-base-300);
   }
-  .bg-blue-200 {
-    background-color: var(--color-blue-200);
-  }
-  .bg-red-100 {
-    background-color: var(--color-red-100);
-  }
-  .bg-teal-200 {
-    background-color: var(--color-teal-200);
-  }
-  .bg-teal-500 {
-    background-color: var(--color-teal-500);
+  .bg-primary {
+    background-color: var(--color-primary);
   }
   .bg-teal-600 {
     background-color: var(--color-teal-600);
   }
-  .bg-teal-700 {
-    background-color: var(--color-teal-700);
-  }
-  .bg-transparent {
-    background-color: transparent;
-  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
-  }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
-  }
   .p-8 {
     padding: calc(var(--spacing) * 8);
-  }
-  .p-10 {
-    padding: calc(var(--spacing) * 10);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -2846,41 +2810,26 @@
   .text-black {
     color: var(--color-black);
   }
-  .text-blue-600 {
-    color: var(--color-blue-600);
-  }
   .text-gray-500 {
     color: var(--color-gray-500);
   }
   .text-gray-700 {
     color: var(--color-gray-700);
   }
-  .text-neutral-content {
-    color: var(--color-neutral-content);
-  }
-  .text-pink-600 {
-    color: var(--color-pink-600);
-  }
   .text-primary {
     color: var(--color-primary);
+  }
+  .text-primary-content {
+    color: var(--color-primary-content);
   }
   .text-red-500 {
     color: var(--color-red-500);
   }
-  .text-secondary {
-    color: var(--color-secondary);
-  }
   .text-secondary-content {
     color: var(--color-secondary-content);
   }
-  .text-teal-600 {
-    color: var(--color-teal-600);
-  }
   .text-teal-700 {
     color: var(--color-teal-700);
-  }
-  .text-white {
-    color: var(--color-white);
   }
   .text-yellow-500 {
     color: var(--color-yellow-500);
@@ -2924,6 +2873,10 @@
   }
   .ring {
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentColor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-xl {
@@ -2995,13 +2948,6 @@
     --btn-color: var(--color-secondary);
     --btn-fg: var(--color-secondary-content);
   }
-  .hover\:bg-teal-600 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-teal-600);
-      }
-    }
-  }
   .hover\:bg-teal-700 {
     &:hover {
       @media (hover: hover) {
@@ -3016,14 +2962,6 @@
       }
     }
   }
-  .sm\:footer-horizontal {
-    @media (width >= 40rem) {
-      grid-auto-flow: column;
-      &.footer-center {
-        grid-auto-flow: row dense;
-      }
-    }
-  }
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3032,14 +2970,6 @@
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  .lg\:footer-horizontal {
-    @media (width >= 64rem) {
-      grid-auto-flow: column;
-      &.footer-center {
-        grid-auto-flow: row dense;
-      }
     }
   }
   .lg\:grid-cols-4 {

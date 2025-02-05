@@ -8,7 +8,7 @@ const CategoryBar: React.FC = () => {
       {categories.map((category) => (
         <button
           key={category}
-          className="btn btn-secondary"  // Using DaisyUI's btn-secondary class
+          className="btn btn-primary"  // Using DaisyUI's btn-secondary class
           onClick={() => {}}
         >
           {category}
