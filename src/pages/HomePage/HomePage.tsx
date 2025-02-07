@@ -8,9 +8,6 @@ interface PageProps {
 }
 
 const HomePage: React.FC<PageProps> = ({ children }) => {
-  const handleNavigationClick = () => {
-    console.log('handleNavigationClick triggered'); // Debugging log
-  };
 
   return (
     <div className="flex flex-col h-screen overflow-hidden">
@@ -51,7 +48,7 @@ const HomePage: React.FC<PageProps> = ({ children }) => {
 
       {/* Fixed Bottom Navigation */}
       <div className="fixed bottom-0 left-0 w-full shadow-md z-50">
-        <BottomNavigation onClick={handleNavigationClick} />
+        <BottomNavigation/>
       </div>
 
       {children}
