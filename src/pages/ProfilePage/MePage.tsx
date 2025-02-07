@@ -8,9 +8,6 @@ interface PageProps {
 }
 
 const MePage: React.FC<PageProps> = ({  }) => {
-  const handleNavigationClick = (action: string) => {
-    console.log(`Navigating to: ${action}`);
-  };
 
   return (
     <div className="flex flex-col h-screen bg-base-100">
@@ -65,7 +62,7 @@ const MePage: React.FC<PageProps> = ({  }) => {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 w-full shadow-md z-10">
-        <BottomNavigation onClick={handleNavigationClick} />
+        <BottomNavigation />
       </div>
     </div>
   );

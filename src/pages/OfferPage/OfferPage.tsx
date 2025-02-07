@@ -6,10 +6,6 @@ import { FiArrowRight } from "react-icons/fi";
 const OfferPage = () => {
   const [image, setImage] = useState<string | null>(null);
 
-  const handleNavigationClick = (action: string) => {
-    console.log(`Navigating to: ${action}`);
-  };
-
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       const imageUrl = URL.createObjectURL(event.target.files[0]);
@@ -110,7 +106,7 @@ const OfferPage = () => {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 w-full shadow-md z-10">
-        <BottomNavigation onClick={handleNavigationClick} />
+        <BottomNavigation />
       </div>
     </div>
   );
