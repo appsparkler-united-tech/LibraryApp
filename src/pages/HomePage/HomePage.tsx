@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header/Header';
-import CategoryBar from './components/CategoryBar/CategoryBar';
 import BottomNavigation from './components/BottomNavigationComponent/BottomNavigation';
 import ScrollArea from './components/ScrollArea/ScrollArea';
 
@@ -10,9 +9,8 @@ interface PageProps {
 
 const HomePage: React.FC<PageProps> = ({ children }) => {
   const handleNavigationClick = () => {
-    console.log('handleNavigationClick triggered');  // Debugging log
+    console.log('handleNavigationClick triggered'); // Debugging log
   };
-  
 
   return (
     <div className="flex flex-col h-screen overflow-hidden">
@@ -28,13 +26,19 @@ const HomePage: React.FC<PageProps> = ({ children }) => {
           alt="Descriptive alt text"
           className="w-3/5 h-auto"
         />
-<div className="divider divider-default text-secondary-content font-normal">
-  The Library App
-</div>
+        <div className="divider divider-default text-secondary-content font-normal">
+          The Library App
+        </div>
       </div>
 
-
-      <CategoryBar />
+      {/* Replacing CategoryBar with Filter Form */}
+      <form className="filter filter-primary flex justify-center gap-2 my-4">
+        <input className="btn btn-square" type="reset" value="×" />
+        <input className="btn" type="radio" name="frameworks" aria-label="Author" />
+        <input className="btn" type="radio" name="frameworks" aria-label="Title" />
+        <input className="btn" type="radio" name="frameworks" aria-label="Genre" />
+        <input className="btn" type="radio" name="frameworks" aria-label="Language" />
+      </form>
 
       <h1 className="text-secondary-content text-pretty font-light mt-2">
         Recently Added Books
@@ -56,6 +60,3 @@ const HomePage: React.FC<PageProps> = ({ children }) => {
 };
 
 export default HomePage;
-
-
-
