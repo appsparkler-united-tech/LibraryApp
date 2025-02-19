@@ -8,7 +8,5 @@ declare module "react-router" {
 
 type Params = {
   "/": {};
-  "/contacts/:contactId": {
-    "contactId": string;
-  };
+  "/": {};
 };
