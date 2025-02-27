@@ -1,28 +1,28 @@
 {
-  "name": "libraryapp",
+  "name": "trial1",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc",
     "preview": "vite preview",
     "build-storybook": "storybook build",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "STORYBOOK=true storybook dev -p 6006",
+    "css": "npx @tailwindcss/cli -i ./app/app.css -o ./app/output.css --watch"
   },
   "dependencies": {
-    "firebase": "^11.1.0",
-    "postcss": "^8.5.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "react-router-dom": "^7.1.1",
-    "tailwindcss": "^4.0.3"
+    "@react-router/node": "^7.2.0",
+    "@react-router/serve": "^7.2.0",
+    "isbot": "^5.1.17",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-router": "^7.2.0"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.9.0",
-    "@eslint/js": "^9.9.0",
+    "@react-router/dev": "^7.2.0",
     "@storybook/addon-console": "^3.0.0",
     "@storybook/addon-essentials": "^8.3.6",
     "@storybook/addon-interactions": "^8.3.6",
@@ -32,26 +32,17 @@
     "@storybook/react": "^8.3.6",
     "@storybook/react-vite": "^8.3.6",
     "@storybook/test": "^8.3.6",
-    "@tailwindcss/postcss": "^4.0.3",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@types/react-router-dom": "^5.3.3",
-    "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.20",
-    "daisyui": "^5.0.0-beta.6",
-    "eslint": "^9.9.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.9",
-    "eslint-plugin-storybook": "^0.10.1",
-    "globals": "^15.9.0",
-    "storybook": "^8.3.6",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.14"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/node": "^20",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "daisyui": "^5.0.0-beta.8",
+    "react-router-devtools": "^1.1.0",
+    "storybook-addon-remix-react-router": "^4.0.1",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vite-tsconfig-paths": "^5.1.4",
+    "@vitejs/plugin-react": "^4.3.1"
   }
 }
