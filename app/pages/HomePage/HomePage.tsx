@@ -1,14 +1,17 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import BottomNavigation from './components/BottomNavigationComponent/BottomNavigation';
+import ScrollArea from './components/ScrollArea/scrollArea';
 
+const books = [
+  { title: 'Book 1', description: 'A great book', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
+  { title: 'Book 2', description: 'Another amazing book', imageSrc: '/books/ringOfFire.png', buttonText: 'Read More' },
+  { title: 'Book 3', description: 'A must-read', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
+  { title: 'Book 4', description: 'An exciting tale', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
+  { title: 'Book 5', description: 'A thrilling adventure', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' }
+];
 
-interface PageProps {
-  children: React.ReactNode;
-}
-
-const HomePage: React.FC<PageProps> = ({ children }) => {
-
+const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col h-screen overflow-hidden">
       {/* Fixed Header */}
@@ -16,7 +19,7 @@ const HomePage: React.FC<PageProps> = ({ children }) => {
         <Header />
       </div>
 
-      {/* Main Content (Non-Scrollable) */}
+      {/* Main Content */}
       <div className="mt-[60px] flex flex-col items-center px-4">
         <img
           src="homePageLibrary.png"
@@ -28,7 +31,7 @@ const HomePage: React.FC<PageProps> = ({ children }) => {
         </div>
       </div>
 
-      {/* Replacing CategoryBar with Filter Form */}
+      {/* Filter Form */}
       <form className="filter filter-primary flex justify-center gap-2 my-4">
         <input className="btn btn-square" type="reset" value="×" />
         <input className="btn" type="radio" name="frameworks" aria-label="Author" />
@@ -41,14 +44,13 @@ const HomePage: React.FC<PageProps> = ({ children }) => {
         Recently Added Books
       </h1>
 
-
+      {/* Scrollable Book Section */}
+      <ScrollArea books={books} />
 
       {/* Fixed Bottom Navigation */}
       <div className="fixed bottom-0 left-0 w-full shadow-md z-50">
-        <BottomNavigation/>
+        <BottomNavigation />
       </div>
-
-      {children}
     </div>
   );
 };
