@@ -1,14 +1,19 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import BottomNavigation from './components/BottomNavigationComponent/BottomNavigation';
-import ScrollArea from './components/ScrollArea/scrollArea';
+import ScrollArea from './components/ScrollArea/ScrollArea';
 
 const books = [
   { title: 'Book 1', description: 'A great book', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
   { title: 'Book 2', description: 'Another amazing book', imageSrc: '/books/ringOfFire.png', buttonText: 'Read More' },
   { title: 'Book 3', description: 'A must-read', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
   { title: 'Book 4', description: 'An exciting tale', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
-  { title: 'Book 5', description: 'A thrilling adventure', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' }
+  { title: 'Book 5', description: 'A thrilling adventure', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
+  { title: 'Book 6', description: 'A great book', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
+  { title: 'Book 7', description: 'Another amazing book', imageSrc: '/books/ringOfFire.png', buttonText: 'Read More' },
+  { title: 'Book 8', description: 'A must-read', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
+  { title: 'Book 9', description: 'An exciting tale', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' },
+  { title: 'Book 10', description: 'A thrilling adventure', imageSrc: '/books/mockingBird.png', buttonText: 'Read More' }
 ];
 
 const HomePage: React.FC = () => {
@@ -20,11 +25,11 @@ const HomePage: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="mt-[60px] flex flex-col items-center px-4">
+      <div className="mt-[70px] flex flex-col items-center px-4">
         <img
           src="homePageLibrary.png"
           alt="Descriptive alt text"
-          className="w-3/5 h-auto"
+          className="w-1/5 h-auto"
         />
         <div className="divider divider-default text-secondary-content font-normal">
           The Library App
