@@ -1,18 +1,47 @@
-import React from 'react';
-import Card, { type CardProps } from '../CardComponent/Card';
+import React from "react";
+import type { Url } from "url";
+
+interface Book {
+  id: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  buttonText: string;
+}
 
 interface ScrollAreaProps {
-  books: CardProps[];
+  books: Book[];
 }
 
 const ScrollArea: React.FC<ScrollAreaProps> = ({ books }) => {
   return (
-    <div className="flex-1 h-96 w-full overflow-y-auto px-4">
-      <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-        {books.map((book, index) => (
-          <Card key={index} {...book} />
-        ))}
-      </div>
+    <div className="overflow-x-auto">
+      <table className="table w-full">
+        <thead>
+          <tr>
+            <th>Book</th>
+            <th>Title</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map((book) => (
+            <tr key={book.id}>
+              <td>
+                <img
+                  src={book.imageSrc}
+                  alt={book.title}
+                  className="mask mask-squircle h-12 w-12"
+                />
+              </td>
+              <td>{book.title}</td>
+              <td>
+                <button className="btn btn-primary btn-xs">Details</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
