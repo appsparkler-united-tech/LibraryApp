@@ -2,13 +2,7 @@ import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 
-import { auth } from "../../firebase";
-import {
-  createUserWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-  FacebookAuthProvider,
-} from "firebase/auth";
+
 import TitleLogoComponent from "../../components/TitleLogoComponent";
 
 const RegistrationPage: React.FC = () => {
