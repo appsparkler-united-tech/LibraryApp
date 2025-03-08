@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from "@storybook/react";
+import type { StoryFn, Meta } from "@storybook/react";
 import OfferPage from "./OfferPage"; // Adjust the import path based on your project structure
 
 export default {

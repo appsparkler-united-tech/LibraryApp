@@ -12,7 +12,7 @@ interface ScrollAreaProps {
   books: Book[];
 }
 
-const ScrollArea: React.FC<ScrollAreaProps> = ({ books }) => {
+const ScrollAreaStorybook: React.FC<ScrollAreaProps> = ({ books }) => {
   return (
     <div className="overflow-x-auto">
       <table className="table w-full">
@@ -45,4 +45,4 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({ books }) => {
   );
 };
 
-export default ScrollArea;
+export default ScrollAreaStorybook;
