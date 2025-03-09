@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router'
 
 interface Book {
   id: string;
@@ -18,7 +19,7 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({ books }) => {
       <table className="table w-full">
         <thead>
           <tr>
-            <th>Book</th>
+            <th>Book 123</th>
             <th>Title</th>
             <th>Details</th>
           </tr>
@@ -35,7 +36,7 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({ books }) => {
               </td>
               <td>{book.title}</td>
               <td>
-                <button className="btn btn-primary btn-xs">Details</button>
+                <Link to="/book"  className="btn btn-primary btn-xs" onClick={() => alert(`Book clicked: ${book.title} (ID: ${book.id})`)}>Details 123</Link>
               </td>
             </tr>
           ))}
