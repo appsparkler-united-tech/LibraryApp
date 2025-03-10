@@ -10,48 +10,8 @@ const RegistrationPage: React.FC = () => {
   const [password, setPassword] = useState("");
   const [step, setStep] = useState<"email" | "password">("email"); // Track the current step
 
-  // Handlers for registration
-  const handleEmailRegistration = () => {
-    if (!email) {
-      alert("Please enter a valid email");
-      return;
-    }
-    setStep("password"); // Move to the password setup step
-  };
 
-  const handlePasswordRegistration = async () => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("User registered with email:", userCredential.user);
-      // Redirect to the homepage or a welcome page
-    } catch (error) {
-      console.error("Error registering with email:", error);
-    }
-  };
 
-  const handleGoogleRegistration = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      console.log("User registered with Google:", result.user);
-    } catch (error) {
-      console.error("Error registering with Google:", error);
-    }
-  };
-
-  const handleFacebookRegistration = async () => {
-    const provider = new FacebookAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      console.log("User registered with Facebook:", result.user);
-    } catch (error) {
-      console.error("Error registering with Facebook:", error);
-    }
-  };
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -76,7 +36,6 @@ const RegistrationPage: React.FC = () => {
               className="input input-bordered w-full"
             />
             <button
-              onClick={handleEmailRegistration}
               className="btn btn-primary w-full"
             >
               Continue
@@ -92,7 +51,6 @@ const RegistrationPage: React.FC = () => {
               className="input input-bordered w-full"
             />
             <button
-              onClick={handlePasswordRegistration}
               className="btn btn-primary w-full"
             >
               Register
@@ -109,7 +67,6 @@ const RegistrationPage: React.FC = () => {
 
         <div className="space-y-2 mt-6">
           <button
-            onClick={handleGoogleRegistration}
             className="btn btn-outline w-full flex items-center space-x-2"
           >
             <FcGoogle size={20} />
@@ -117,7 +74,6 @@ const RegistrationPage: React.FC = () => {
           </button>
 
           <button
-            onClick={handleFacebookRegistration}
             className="btn btn-outline w-full flex items-center space-x-2"
           >
             <FaFacebook size={20} color="#1877F2" />

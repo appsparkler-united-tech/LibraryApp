@@ -16,7 +16,15 @@ const BookPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen relative">
+      {/* Back button at the very top-left */}
+      <div className="p-2">
+        <button 
+          className="btn btn-link btn-secondary text-pretty font-light text-sm"
+        >
+          Back
+        </button>
+      </div>
       {/* Book Cover */}
       <BookCover />
 

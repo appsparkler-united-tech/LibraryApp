@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import { Link } from "react-router"
 
 
 import TitleLogoComponent from "../../components/TitleLogoComponent";
@@ -10,54 +11,16 @@ const RegistrationPage: React.FC = () => {
   const [password, setPassword] = useState("");
   const [step, setStep] = useState<"email" | "password">("email"); // Track the current step
 
-  // Handlers for registration
-  const handleEmailRegistration = () => {
-    if (!email) {
-      alert("Please enter a valid email");
-      return;
-    }
-    setStep("password"); // Move to the password setup step
-  };
 
-  const handlePasswordRegistration = async () => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("User registered with email:", userCredential.user);
-      // Redirect to the homepage or a welcome page
-    } catch (error) {
-      console.error("Error registering with email:", error);
-    }
-  };
 
-  const handleGoogleRegistration = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      console.log("User registered with Google:", result.user);
-    } catch (error) {
-      console.error("Error registering with Google:", error);
-    }
-  };
 
-  const handleFacebookRegistration = async () => {
-    const provider = new FacebookAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      console.log("User registered with Facebook:", result.user);
-    } catch (error) {
-      console.error("Error registering with Facebook:", error);
-    }
-  };
+
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       {/* Top Navigation */}
       <div className="absolute top-10 w-full flex justify-between px-5">
-  <button className="btn btn-link btn-sm text-secondary-content font-light">Back</button>
+  <Link to="/" className="btn btn-link btn-sm text-secondary-content font-light">Back</Link>
   <button className="btn btn-link btn-sm text-secondary-content font-light">Help</button>
 </div>
 
@@ -76,7 +39,6 @@ const RegistrationPage: React.FC = () => {
               className="input input-bordered w-full"
             />
             <button
-              onClick={handleEmailRegistration}
               className="btn btn-primary w-full"
             >
               Continue
@@ -92,7 +54,6 @@ const RegistrationPage: React.FC = () => {
               className="input input-bordered w-full"
             />
             <button
-              onClick={handlePasswordRegistration}
               className="btn btn-primary w-full"
             >
               Register
@@ -102,14 +63,13 @@ const RegistrationPage: React.FC = () => {
 
         <p className="text-sm text-center mt-4">
           Already have an account?{" "}
-          <a href="/login" className="text-primary hover:underline">
+          <Link to="/login" className="text-primary hover:underline">
             Login
-          </a>
+          </Link>
         </p>
 
         <div className="space-y-2 mt-6">
           <button
-            onClick={handleGoogleRegistration}
             className="btn btn-outline w-full flex items-center space-x-2"
           >
             <FcGoogle size={20} />
@@ -117,7 +77,6 @@ const RegistrationPage: React.FC = () => {
           </button>
 
           <button
-            onClick={handleFacebookRegistration}
             className="btn btn-outline w-full flex items-center space-x-2"
           >
             <FaFacebook size={20} color="#1877F2" />
@@ -133,3 +92,7 @@ const RegistrationPage: React.FC = () => {
 };
 
 export default RegistrationPage;
+function createUserWithEmailAndPassword(auth: any, email: string, password: string) {
+  throw new Error("Function not implemented.");
+}
+
