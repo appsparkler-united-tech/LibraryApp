@@ -3,12 +3,13 @@
 
 import TitleLogoComponent from "../../components/TitleLogoComponent"
 import BottomNavigation from "../HomePage/components/BottomNavigationComponent/BottomNavigation";
+import { Link } from "react-router"
 
 const SearchPage = () => {
   return (
     <div className="container mx-auto p-4 bg-base-100 min-h-screen flex flex-col items-center">
       {/* Back Button */}
-      <button className="btn btn-link btn-secondary self-start text-pretty font-light text-sm">Back</button>
+      <Link to="/" className="btn btn-link btn-secondary self-start text-pretty font-light text-sm">Back</Link>
 
       {/* Title Logo Component */}
                         {/* Reused TitleLogoComponent */}

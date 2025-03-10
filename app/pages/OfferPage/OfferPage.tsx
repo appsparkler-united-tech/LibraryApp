@@ -21,9 +21,9 @@ const OfferPage = () => {
   <h1 className="font-pretty text-secondary-content">
     Offer Books
   </h1>
-  <button className="btn btn-link btn-secondary absolute left-0 text-pretty font-light text-sm">
+  <Link to="/" className="btn btn-link btn-secondary absolute left-0 text-pretty font-light text-sm">
     Back
-  </button>
+  </Link>
 </div>
 
       {/* Photo Upload Section - Full Width */}

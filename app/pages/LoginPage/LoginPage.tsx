@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc"; // Google logo
 import { FaFacebook } from "react-icons/fa"; // Facebook logo
+import { Link } from "react-router"
 
 
 import TitleLogoComponent from "../../components/TitleLogoComponent";
@@ -14,7 +15,7 @@ const LoginPage: React.FC = () => {
     <div className="flex flex-col items-center justify-center h-screen">
       {/* Top Navigation */}
       <div className="absolute top-10 w-full flex justify-between px-5">
-  <button className="btn btn-link btn-sm text-secondary-content font-light">Back</button>
+  <Link to="/" className="btn btn-link btn-sm text-secondary-content font-light">Back</Link>
   <button className="btn btn-link btn-sm text-secondary-content font-light">Help</button>
 </div>
 
@@ -48,9 +49,9 @@ const LoginPage: React.FC = () => {
 
         <p className="text-sm text-center mt-4">
           Don't have an account yet?{" "}
-          <button className="text-primary hover:underline">
+          <Link to="/sign_up" className="text-primary hover:underline">
             Sign Up
-          </button>
+          </Link>
         </p>
 
         <div className="space-y-2 mt-6">
