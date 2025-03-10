@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from 'react-router'
 
 interface Book {
   id: string;
@@ -13,7 +12,7 @@ interface ScrollAreaProps {
   books: Book[];
 }
 
-const ScrollArea: React.FC<ScrollAreaProps> = ({ books }) => {
+const ScrollAreaStorybook: React.FC<ScrollAreaProps> = ({ books }) => {
   return (
     <div className="overflow-x-auto">
       <table className="table w-full">
@@ -36,7 +35,7 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({ books }) => {
               </td>
               <td>{book.title}</td>
               <td>
-                <Link to="/book"  className="btn btn-primary btn-xs" onClick={() => alert(`Book clicked: ${book.title} (ID: ${book.id})`)}>Details</Link>
+                <button className="btn btn-primary btn-xs">Details</button>
               </td>
             </tr>
           ))}
@@ -46,4 +45,4 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({ books }) => {
   );
 };
 
-export default ScrollArea;
+export default ScrollAreaStorybook;

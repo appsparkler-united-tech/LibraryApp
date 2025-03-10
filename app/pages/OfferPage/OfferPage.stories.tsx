@@ -1,12 +1,12 @@
-import { StoryFn, Meta } from "@storybook/react";
-import OfferPage from "./OfferPage"; // Adjust the import path based on your project structure
+import type { StoryFn, Meta } from "@storybook/react";
+import OfferPageStorybook from "./OfferPageStorybook"; // Adjust the import path based on your project structure
 
 export default {
   title: "Pages/OfferPage",
-  component: OfferPage,
+  component: OfferPageStorybook,
 } as Meta;
 
-const Template: StoryFn = (args) => <OfferPage {...args} />;
+const Template: StoryFn = (args) => <OfferPageStorybook {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

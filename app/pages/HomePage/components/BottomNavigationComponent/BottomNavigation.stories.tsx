@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BottomNavigation from "./BottomNavigation";
+import BottomNavigation from "./BottomNavigationStorybook";
+import { MemoryRouter } from "react-router";
 import { action } from "@storybook/addon-actions";
 
 const meta: Meta<typeof BottomNavigation> = {
@@ -8,6 +9,13 @@ const meta: Meta<typeof BottomNavigation> = {
   parameters: {
     layout: "fullscreen",
   },
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 };
 
 export default meta;

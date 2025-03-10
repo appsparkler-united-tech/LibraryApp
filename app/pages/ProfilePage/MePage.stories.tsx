@@ -1,12 +1,12 @@
 import type { Meta, StoryFn } from "@storybook/react";
-import MePage from "./MePage";
+import MePageStorybook from "./MePageStorybook";
 
 export default {
   title: "Pages/MePage",
-  component: MePage,
-} as Meta<typeof MePage>;
+  component: MePageStorybook,
+} as Meta<typeof MePageStorybook>;
 
-const Template: StoryFn<typeof MePage> = (args) => <MePage {...args} />;
+const Template: StoryFn<typeof MePageStorybook> = (args) => <MePageStorybook {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
