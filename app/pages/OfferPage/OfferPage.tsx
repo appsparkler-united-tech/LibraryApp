@@ -17,9 +17,14 @@ const OfferPage = () => {
   return (
     <div className="h-screen flex flex-col bg-base-100">
       {/* Header */}
-      <h1 className="flex justify-center font-pretty mt-1 text-secondary-content">
-        Offer Books
-      </h1>
+      <div className="relative flex justify-center items-center">
+  <h1 className="font-pretty text-secondary-content">
+    Offer Books
+  </h1>
+  <button className="btn btn-link btn-secondary absolute left-0 text-pretty font-light text-sm">
+    Back
+  </button>
+</div>
 
       {/* Photo Upload Section - Full Width */}
       <label htmlFor="file-input" className="relative w-full mt-2">
