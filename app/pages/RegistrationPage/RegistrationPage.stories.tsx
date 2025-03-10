@@ -1,12 +1,12 @@
 import type { StoryFn, Meta } from "@storybook/react";
-import RegistrationPage from "./RegistrationPage";
+import RegistrationPageStorybook from "./RegistrationPageStorybook";
 
 export default {
   title: "Pages/RegistrationPage",
-  component: RegistrationPage,
+  component: RegistrationPageStorybook,
 } as Meta;
 
-const Template: StoryFn = (args) => <RegistrationPage {...args} />;
+const Template: StoryFn = (args) => <RegistrationPageStorybook {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

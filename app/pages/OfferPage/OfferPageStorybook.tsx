@@ -1,8 +1,7 @@
 import { useState } from "react";
-import BottomNavigation from "../HomePage/components/BottomNavigationComponent/BottomNavigation";
+import BottomNavigationStorybook from "../HomePage/components/BottomNavigationComponent/BottomNavigationStorybook";
 import { CiLocationOff } from "react-icons/ci";
 import { FiArrowRight } from "react-icons/fi";
-import { Link } from "react-router";
 
 const OfferPage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -98,7 +97,7 @@ const OfferPage = () => {
     </div>
 
 <div className="flex flex-col items-center mt-10 justify-center text-center px-4">
-  <Link to="/book" className="btn btn-primary mt-6">Submit Book</Link>
+  <button className="btn btn-primary mt-6">Submit Book</button>
   </div>
     
 
@@ -107,7 +106,7 @@ const OfferPage = () => {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 w-full shadow-md z-10">
-        <BottomNavigation />
+        <BottomNavigationStorybook />
       </div>
     </div>
   );

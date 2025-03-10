@@ -1,14 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BookPage from "./BookPage";
-import React from "react";
+import BookPageStorybook from "./BookPageStorybook";
 
-const meta: Meta<typeof BookPage> = {
+const meta: Meta<typeof BookPageStorybook> = {
   title: "Pages/BookPage",
-  component: BookPage,
+  component: BookPageStorybook,
 };
 
 export default meta;
 
-export const Default: StoryObj<typeof BookPage> = {
-  render: () => <BookPage />,
+export const Default: StoryObj<typeof BookPageStorybook> = {
+  render: () => <BookPageStorybook />,
 };

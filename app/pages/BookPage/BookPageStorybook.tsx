@@ -1,8 +1,7 @@
 import React from "react";
-import BottomNavigation from "../HomePage/components/BottomNavigationComponent/BottomNavigation";
+import BottomNavigationStorybook from "../HomePage/components/BottomNavigationComponent/BottomNavigationStorybook";
 import BookCover from "./BookCover";
 import BookDetails from "./BookDetails";
-import { Link } from "react-router";
 
 import Lender from "./Lender";
 
@@ -42,12 +41,12 @@ const BookPage: React.FC = () => {
 
       {/* Message Button */}
       <div className="flex justify-center">
-      <Link to="/message_librarian" className="btn btn-primary">Message</Link>
+      <button className="btn btn-primary">Message</button>
       </div>
 
             {/* Bottom Navigation */}
             <div className="fixed bottom-0 left-0 w-full shadow-md z-10">
-        <BottomNavigation />
+        <BottomNavigationStorybook />
       </div>
 
     </div>

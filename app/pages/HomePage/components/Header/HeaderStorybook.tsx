@@ -1,7 +1,6 @@
 import React from 'react';
 import { IoMdPin, IoIosNotifications } from 'react-icons/io';
 import TextInput from '../TextInputComponent/TextInput';
-import { Link } from "react-router";
 
 const Header: React.FC = () => {
   return (
@@ -25,10 +24,10 @@ const Header: React.FC = () => {
 
       {/* Second row: Link under the search bar */}
       <div className="mt-2">
-  <Link to="/advanced_search" className="link text-secondary-content text-xs font-thin ml-1">
-    Advanced Search
-  </Link>
-</div>
+      <a href="#" className="link text-secondary-content text-xs font-thin ml-1">
+          Advanced Search
+        </a>
+      </div>
     </div>
   );
 };

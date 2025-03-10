@@ -1,8 +1,8 @@
-import LoginPage from "./LoginPage";
+import LoginPageStorybook from "./LoginPageStorybook";
 
 export default {
   title: "Pages/LoginPage",
-  component: LoginPage,
+  component: LoginPageStorybook,
 };
 
-export const Default = () => <LoginPage />;
+export const Default = () => <LoginPageStorybook />;

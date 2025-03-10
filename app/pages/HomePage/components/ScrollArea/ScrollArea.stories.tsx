@@ -1,10 +1,10 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import ScrollArea from './ScrollArea';
+import ScrollAreaStorybook from './ScrollAreaStorybook';
 
-const meta: Meta<typeof ScrollArea> = {
+const meta: Meta<typeof ScrollAreaStorybook> = {
   title: 'Pages/HomePage/ScrollArea',
-  component: ScrollArea,
+  component: ScrollAreaStorybook,
   tags: ['autodocs'],
   args: {
     books: [
@@ -46,6 +46,6 @@ const meta: Meta<typeof ScrollArea> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ScrollArea>;
+type Story = StoryObj<typeof ScrollAreaStorybook>;
 
 export const Default: Story = {};
