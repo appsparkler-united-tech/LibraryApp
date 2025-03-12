@@ -7,5 +7,6 @@ export default [
   route("login", "pages/LoginPage/LoginPage.tsx"), // Add Offer Page
   route("advanced_search", "pages/SearchPage/SearchPage.tsx"), // Add Offer Page
   route("message_librarian", "pages/MessagePage/MessagePage.tsx"), // Add Offer Page
-  route("sign_up", "pages/RegistrationPage/RegistrationPage.tsx")
+  route("sign_up", "pages/RegistrationPage/RegistrationPage.tsx"),
+  route("me", "pages/ProfilePage/MePage.tsx")
 ] satisfies RouteConfig;

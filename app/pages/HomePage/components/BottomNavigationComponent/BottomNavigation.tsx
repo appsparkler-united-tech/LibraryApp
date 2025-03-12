@@ -24,7 +24,10 @@ const BottomNavigation = () => {
         <span className="dock-label text-pretty font-light">Chat</span>
       </button>
 
-      <Link to="/login" className="flex flex-col items-center gap-0.5">
+      <Link to="/login" className="flex flex-col items-center gap-0.5" onClick={() => {
+    console.log("hello there");
+
+  }}>
         <CiUser size={24}/>
         <span className="dock-label text-pretty font-light">Me</span>
       </Link>

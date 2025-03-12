@@ -39,7 +39,11 @@ const LoginPage: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="input input-bordered w-full"
           />
-          <button className="btn btn-primary w-full">
+          <button className="btn btn-primary w-full"   onClick={() => {
+    console.log("hello there");
+    console.log("Email:", email);
+    console.log("Password:", password);
+  }}>
             Login
           </button>
         </div>

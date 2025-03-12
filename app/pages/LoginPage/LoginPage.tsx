@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc"; // Google logo
 import { FaFacebook } from "react-icons/fa"; // Facebook logo
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router"; // Import from @remix-run/react
 import TitleLogoComponent from "../../components/TitleLogoComponent";
 
 // Firebase imports
@@ -40,28 +40,31 @@ if (typeof window !== 'undefined') {
   auth = getAuth(app);
 }
 
-
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate(); // Hook for navigation
 
   // Handler for email/password login
-  const handleEmailLogin = async () => {
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Optionally redirect or show a success message
-    } catch (err: any) {
-      setError(err.message);
-    }
-  };
+  
+    const handleLogin = async () => {
+      try {
+        console.log("hello there, I was called")
+        await signInWithEmailAndPassword(auth, email, password);
+        console.log("Login successful");
+        navigate("/me"); // Navigate to profile page after login
+      } catch (error) {
+        console.error("Login failed:", error);
+      }
+    };
 
   // Handler for Google sign in
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      // Optionally redirect or show a success message
+      navigate("/me"); // Redirect to the profile page
     } catch (err: any) {
       setError(err.message);
     }
@@ -72,7 +75,7 @@ const LoginPage: React.FC = () => {
     const provider = new FacebookAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      // Optionally redirect or show a success message
+      navigate("/me"); // Redirect to the profile page
     } catch (err: any) {
       setError(err.message);
     }
@@ -112,8 +115,7 @@ const LoginPage: React.FC = () => {
           />
           <button 
             className="btn btn-primary w-full" 
-            onClick={handleEmailLogin}
-          >
+            onClick={handleLogin}>
             Login
           </button>
         </div>
