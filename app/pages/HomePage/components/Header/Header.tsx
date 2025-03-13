@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 const Header: React.FC = () => {
   return (
-    <div className="navbar bg-base-100 flex flex-col">
+    <div className="navbar flex flex-col">
       {/* First row: Search Bar and Buttons */}
       <div className="flex items-center justify-between w-full">
         <div className="form-control w-full">

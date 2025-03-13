@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import BottomNavigation from './components/BottomNavigationComponent/BottomNavigation';
-import ScrollArea from './components/ScrollArea/ScrollArea';
+import ScrollArea from '../../components/ScrollArea/ScrollArea';
 
 const books = [
   {
@@ -66,6 +66,8 @@ const HomePage: React.FC = () => {
         <input className="btn" type="radio" name="frameworks" aria-label="Genre" />
         <input className="btn" type="radio" name="frameworks" aria-label="Language" />
       </form>
+
+
 
       <h1 className="text-secondary-content text-pretty font-light mt-2">
         Recently Added Books

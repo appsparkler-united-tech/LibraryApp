@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import ScrollAreaStorybook from './ScrollAreaStorybook';
+import ScrollAreaStorybook from './ScrollAreaBooksStorybook';
 
 const meta: Meta<typeof ScrollAreaStorybook> = {
-  title: 'Pages/HomePage/ScrollArea',
+  title: 'components/ScrollAreaBooks',
   component: ScrollAreaStorybook,
   tags: ['autodocs'],
   args: {
