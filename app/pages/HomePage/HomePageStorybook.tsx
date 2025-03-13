@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderStorybook from './components/Header/HeaderStorybook';
-import ScrollAreaStorybook from './components/ScrollArea/ScrollAreaStorybook';
+import ScrollAreaStorybook from '../../components/ScrollArea/ScrollAreaBooksStorybook';
 import BottomNavigationStorybook from './components/BottomNavigationComponent/BottomNavigationStorybook';
 
 const books = [
@@ -58,14 +58,12 @@ const HomePageStorybook: React.FC = () => {
         </div>
       </div>
 
-      {/* Filter Form */}
-      <form className="filter filter-primary flex justify-center gap-2 my-4">
-        <input className="btn btn-square" type="reset" value="×" />
-        <input className="btn" type="radio" name="frameworks" aria-label="Author" />
-        <input className="btn" type="radio" name="frameworks" aria-label="Title" />
-        <input className="btn" type="radio" name="frameworks" aria-label="Genre" />
-        <input className="btn" type="radio" name="frameworks" aria-label="Language" />
-      </form>
+      <div className="join lex justify-center">
+  <button className="btn join-item">Author</button>
+  <button className="btn join-item">Title</button>
+  <button className="btn join-item">Genre</button>
+  <button className="btn join-item">Language</button>
+</div>
 
       <h1 className="text-secondary-content text-pretty font-light mt-2">
         Recently Added Books
