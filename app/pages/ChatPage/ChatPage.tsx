@@ -17,8 +17,8 @@ const ChatPage = () => {
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-bold">Book Name</span>
-            <span className="text-sm text-gray-500">Farnosch</span>
+            <span className="font-bold">How to Kill a Mocking Bird</span>
+            <span className="text-sm text-gray-500">Radhika</span>
           </div>
         </div>
         <button className="btn btn-ghost btn-square">
@@ -36,8 +36,7 @@ const ChatPage = () => {
               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="user" />
             </div>
           </div>
-          <div className="chat-header">Obi-Wan Kenobi <time className="text-xs opacity-50">12:45</time></div>
-          <div className="chat-bubble">Hope you enjoy the book!</div>
+          <div className="chat-bubble chat-bubble-primary text-pretty font-light">Hope you enjoy the book!</div>
           <div className="chat-footer opacity-50">Delivered</div>
         </div>
 
@@ -47,8 +46,7 @@ const ChatPage = () => {
               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="user" />
             </div>
           </div>
-          <div className="chat-header">Anakin <time className="text-xs opacity-50">12:46</time></div>
-          <div className="chat-bubble">I am sure I will!</div>
+          <div className="chat-bubble chat-bubble-neutral text-pretty font-light">I am sure I will!</div>
           <div className="chat-footer opacity-50">Seen at 12:46</div>
         </div>
       </div>
